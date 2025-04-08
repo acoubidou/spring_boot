@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr-FR" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Accueil</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+	</head>
+<body>
+<header th:insert="fragments/header">
+</header>
+<main>
+	<p>Petit test</p>
+<p th:text="'Taille de la liste : ' + ${#lists.size(personnes)}">Taille de la liste : ?</p>
+
+	<div class="table-responsive">
+		<table class="table table-striped table-sm">
+			<thead>
+				<tr>
+					<th>Nom</th>
+					<th>Mail</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${#lists.isEmpty(personnes)}">
+					<td colspan="3">Aucune personnes</td>
+				</tr>
+				<tr th:each="personne : ${personnes}">
+					<td><span th:text="${personne.personne_nom}">Nom</span></td>
+					<td><span th:text="${personne.personne_mail}">Mail</span></td>
+					<td>
+						<a th:href="@{/deletePersonne/{id}(id=${personne.personne_id})}">
+							<button class="btn btn-danger">Supprimer</button>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<hr>
+	<a href="hmst" class="btn btn-primary">Break the code</a>
+	<form method="post" th:action="@{/savePersonne}" th:object="${personne}">
+		<label for="nom">Nom</label>
+		<input type="text" id="nom" th:field="*{personne_nom}" placeholder="Nom">
+		<label for="mail">Email</label>
+		<input type="email" id="mail" th:field="*{personne_mail}" placeholder="Email">
+		<button type="submit" class="btn btn-primary">Créer</button>
+	</form>
+</main>
+<footer th:insert="fragments/footer">
+</footer>
+</body>
+</html>
