@@ -20,20 +20,6 @@ public class PersonneController {
     @Autowired
     private PersonneService service;
 
-    @GetMapping("/")
-    public String index(Model model) {
-        Iterable<Personne> listPersonnes = service.getPersonnes();
-        model.addAttribute("personnes", listPersonnes);
-        model.addAttribute("personne", new Personne());
-        return "index";
-    }
-
-    @GetMapping("/deletePersonne/{id}")
-    public ModelAndView deletePersonne(@PathVariable("id") final int id) {
-        service.deletePersonne(id);
-        return new ModelAndView("redirect:/");
-    }
-
     @PostMapping("/savePersonne")
     public ModelAndView savePersonne(@ModelAttribute Personne personne) {
         if (personne.getPersonne_id() != null) {
@@ -48,9 +34,33 @@ public class PersonneController {
         }
         return new ModelAndView("redirect:/");
     }
-
-    @GetMapping("/hmst")
-    public String hmst() {
-        return "hmst";
+    @GetMapping("/deletePersonne/{id}")
+    public ModelAndView deletePersonne(@PathVariable("id") final int id) {
+        service.deletePersonne(id);
+        return new ModelAndView("redirect:/");
     }
+
+    @GetMapping("/personne-liste")
+    public String personneListe(Model model) {
+        model.addAttribute("pageTitle", "Personne - Liste");
+        Iterable<Personne> listPersonnes = service.getPersonnes();
+        model.addAttribute("personnes", listPersonnes);
+        return "personne/personne_liste";
+    }
+
+    @GetMapping("/personne-creation")
+    public String personneCreate(Model model) {
+        model.addAttribute("pageTitle", "Personne - Creation");
+        model.addAttribute("personne", new Personne());
+        return "personne/personne_save";
+    }
+
+    @GetMapping("/personne-modification/{id}")
+    public String personneModif(@PathVariable("id") int id, Model model) {
+        model.addAttribute("pageTitle", "Personne - Modification");
+        Personne personne = service.getPersonne(id);
+        model.addAttribute("personne", personne);
+        return "personne/personne_save";
+    }
+
 }
