@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr-FR" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="fragments/head :: head(${pageTitle})"></th:block>
+<body>
+<header th:insert="fragments/header">
+</header>
+<main>
+    <div class="container">
+		<div class="row">
+			<form method="POST" th:action="@{/saveVehicule}" th:object="${vehicule}">
+				<input type="hidden" name="id" th:field="*{vehicule_id}"/>
+				<div class="form-group">
+					<label for="nom">Marque</label>
+					<input type="text" class="form-control" id="nom" th:field="*{vehicule_marque}">
+				</div>
+				<div class="form-group">
+					<label for="mail">Modele</label>
+					<input type="text" class="form-control" id="mail" th:field="*{vehicule_modele}">
+				</div>
+				<button type="submit" class="btn btn-success" th:text="${vehicule.vehicule_id} == null ? 'Créer' : 'Modifier'">Créer/modifier</button>
+			</form>
+		</div>
+	</div>
+</main>
+<footer th:insert="fragments/footer">
+</footer>
+</body>
+</html>
