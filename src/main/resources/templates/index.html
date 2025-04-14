@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr-FR" xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="fragments/head :: head(${pageTitle})"></th:block>
-<body>
-<header th:insert="fragments/header">
-</header>
-<main>
-
-
-
-
+<body class="d-flex flex-column min-vh-100">
+<div th:insert="fragments/header">
+</div>
+<main class="flex-fill">
+	<div class="container">
+		<div class="row">
+			<div class="d-flex justify-content-center pt-5">
+				<img src="/img/logo_final.png" class="img-fluid" alt="Logo appli">
+			</div>
+		</div>
+	</div>
 </main>
-<footer th:insert="fragments/footer">
-</footer>
+<div th:insert="fragments/footer">
+</div>
 </body>
 </html>
