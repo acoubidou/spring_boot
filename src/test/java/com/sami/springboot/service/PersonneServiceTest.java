@@ -29,7 +29,6 @@ public class PersonneServiceTest {
 
     @Test
     public void testGetPersonne_shouldReturnPersonne() {
-        // Arrange
         Personne mockPersonne = new Personne();
         mockPersonne.setPersonne_id(1);
         mockPersonne.setPersonne_nom("Jean Dupont");
@@ -37,10 +36,8 @@ public class PersonneServiceTest {
 
         when(personneRepository.getPersonne(1)).thenReturn(mockPersonne);
 
-        // Act
         Personne result = personneService.getPersonne(1);
 
-        // Assert
         assertNotNull(result);
         assertEquals("Jean Dupont", result.getPersonne_nom());
         assertEquals("jean.dupont@example.com", result.getPersonne_mail());
@@ -48,7 +45,6 @@ public class PersonneServiceTest {
 
     @Test
     public void testSavePersonne_shouldCallCreatePersonne_whenIdIsNull() {
-        // Arrange
         Personne newPersonne = new Personne();
         newPersonne.setPersonne_nom("Nouvelle");
         newPersonne.setPersonne_mail("nouvelle@ex.com");
@@ -60,10 +56,8 @@ public class PersonneServiceTest {
 
         when(personneRepository.createPersonne(any(Personne.class))).thenReturn(saved);
 
-        // Act
         Personne result = personneService.savePersonne(newPersonne);
 
-        // Assert
         assertNotNull(result);
         assertEquals(Optional.of(5), result.getPersonne_id());
         verify(personneRepository).createPersonne(newPersonne);

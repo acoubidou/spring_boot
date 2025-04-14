@@ -21,12 +21,30 @@ public class PersonneControllerTest {
     private MockMvc mockMvc;
 
     @Test
+    void createPersonneTest() throws Exception {
+        mockMvc.perform(get("/personne-creation"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("personne/personne_save"))
+                .andExpect(MockMvcResultMatchers.content().string(containsString("Créer")));
+    }
+
+    @Test
+    void updatePersonneTest() throws Exception {
+        mockMvc.perform(get("/personne-modification/1"))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(view().name("personne/personne_save"))
+                .andExpect(MockMvcResultMatchers.content().string(containsString("Modifier")));
+    }
+
+    @Test
     public void getPersonneTest() throws Exception {
         mockMvc.perform(get("/personne-liste"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("personne/personne_liste"))
-                .andExpect(MockMvcResultMatchers.content().string(containsString("personne")));
+                .andExpect(MockMvcResultMatchers.content().string(containsString("Chercher")));
     }
 
 }

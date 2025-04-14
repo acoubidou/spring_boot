@@ -1,5 +1,1 @@
-mvn clean verify sonar:sonar \
-  -Dsonar.projectKey=Spring_Boot \
-  -Dsonar.projectName='Spring_Boot' \
-  -Dsonar.host.url=http://localhost:9000 \
-  -Dsonar.token=sqp_4686d209738a3e9b39556390486add095eb51319
+mvn clean verify sonar:sonar -Dsonar.projectKey=Spring_Boot -Dsonar.projectName='Spring_Boot' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_4686d209738a3e9b39556390486add095eb51319
