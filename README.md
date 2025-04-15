@@ -6,6 +6,7 @@ Il propose une interface web pour consulter les données et effectuer diverses o
 ## 🛠️ Technologies utilisées
 
 - Java 21
+- Wamp (BDD : MySql - PHPMyAdmin)
 - Spring Boot
 - Spring MVC
 - Thymeleaf
@@ -69,5 +70,13 @@ Avec maven installé
 ```bash
 mvn test
 ```
+
+## SonarQube 
+
+Il est possible de tester la qualité du code via SonarQube. Pour ceci, installez SonarQube à https://www.sonarsource.com/fr/products/sonarqube/downloads/ 
+
+En ligne de commande tapez StartSonar.bat. Une fois lancé, SonarQube est disponible à l’adresse http://localhost:9000/ 
+
+Changez votre user et mdp, puis créez le projet via l’interface. Vous pourrez ensuite lancer le projet depuis la racine du projet en lancant le fichier Sonar.bat 
 ## 👤 Auteur
 Sami [AutoPro]
