@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr-FR" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="fragments/head :: head(${pageTitle})"></th:block>
+<body class="d-flex flex-column min-vh-100">
+<div th:insert="fragments/header">
+</div>
+<main class="flex-fill">
+	<div class="container">
+		<div class="d-flex justify-content-center pt-5">
+			<div>
+				<h1>Protection des données personnelles (RGPD)</h1>
+				<p>
+					Le site Auto Pro respecte la vie privée de ses utilisateurs et s'engage à ce que la collecte et le
+					traitement de vos données personnelles soient conformes au Règlement Général sur la Protection des Données
+					(RGPD - Règlement UE 2016/679).
+				</p>
+
+				<h2>Responsable du traitement</h2>
+				<p>
+					Le responsable du traitement des données est :<br>
+					<strong>AutoPro</strong><br>
+					150 rue de la libération, Nancy 54000<br>
+					Email : autopro@gmail.com
+				</p>
+
+				<h2>Données collectées</h2>
+				<p>
+					Les données susceptibles d’être collectées sur ce site sont exclusivement destinées à un usage interne
+					(formulaire de contact, statistiques d’utilisation, etc.). Aucune donnée personnelle n’est cédée ou vendue à des tiers.
+				</p>
+
+				<h2>Vos droits</h2>
+				<p>
+					Conformément à la législation en vigueur, vous disposez des droits suivants :
+				</p>
+				<ul>
+					<li>Droit d’accès à vos données personnelles</li>
+					<li>Droit de rectification</li>
+					<li>Droit à l’effacement (droit à l’oubli)</li>
+					<li>Droit à la limitation du traitement</li>
+					<li>Droit à la portabilité de vos données</li>
+					<li>Droit d’opposition</li>
+				</ul>
+				<p>
+					Vous pouvez exercer ces droits en envoyant un email à : <strong>autopro@gmail.com</strong><br>
+					Un justificatif d’identité pourra être demandé pour valider votre demande. Celle-ci sera traitée dans un délai maximal de 30 jours.
+				</p>
+
+				<h2>Hébergement du site</h2>
+				<p>
+					Le site est hébergé par :<br>
+					<strong>OVPro</strong><br>
+					99 rue de l'hébergement, Nancy 54000<br>
+					Site : <a href="http://www.OVPro.fr" target="_blank">www.OVPro.fr</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</main>
+<div th:insert="fragments/footer">
+</div>
+</body>
+</html>

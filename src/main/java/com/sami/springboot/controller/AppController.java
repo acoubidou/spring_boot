@@ -12,4 +12,10 @@ public class AppController {
         model.addAttribute("pageTitle", "Accueil");
         return "index";
     }
+
+    @GetMapping("/mentions-legales")
+    public String mentions_legales(Model model) {
+        model.addAttribute("pageTitle", "Mentions légales");
+        return "mentions_légales";
+    }
 }

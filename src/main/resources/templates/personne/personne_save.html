@@ -8,6 +8,7 @@
     <div class="container">
 		<div class="row">
 			<div class="col-lg-6 offset-lg-3 col-12">
+				<h1 th:text="${personne.personne_id} == null ? 'Créer une personne' : 'Modifier une personne'" class="pt-5 pb-4">Créer/modifier une personne</h1>
 				<form method="POST" th:action="@{/savePersonne}" th:object="${personne}">
 					<input type="hidden" name="id" th:field="*{personne_id}"/>
 					<div class="form-group p-2">
