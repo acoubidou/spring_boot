@@ -1,5 +1,8 @@
 FROM openjdk:21
 
+ENV APP_HOME=/app
+ENV FR_POMPEY_CDA_WEBPROJET_URLAPI=http://apiprojet:9000
+
 EXPOSE 9091
 
 WORKDIR /app
