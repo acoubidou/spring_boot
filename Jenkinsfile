@@ -11,6 +11,11 @@ pipeline {
         jdk 'JDK21'
     }
     stages {
+        stage('Clean workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Git Checkout') {
             steps {
                 script {
@@ -23,11 +28,6 @@ pipeline {
         stage('Build Maven') {
             steps {
                 bat 'mvn clean package'
-            }
-        }
-        stage('Clean workspace') {
-            steps {
-                cleanWs()
             }
         }
         stage('Build Docker Image') {

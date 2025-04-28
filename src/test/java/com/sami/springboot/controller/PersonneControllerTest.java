@@ -22,7 +22,7 @@ public class PersonneControllerTest {
 
     @Test
     void createPersonneTest() throws Exception {
-        mockMvc.perform(get("/personne-creation"))
+        mockMvc.perform(get("http://localhost:8082/personne-creation"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("personne/personne_save"))
@@ -31,7 +31,7 @@ public class PersonneControllerTest {
 
     @Test
     void updatePersonneTest() throws Exception {
-        mockMvc.perform(get("/personne-modification/1"))
+        mockMvc.perform(get("http://localhost:8082/personne-modification/1"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("personne/personne_save"))
@@ -40,7 +40,7 @@ public class PersonneControllerTest {
 
     @Test
     public void getPersonneTest() throws Exception {
-        mockMvc.perform(get("/personne-liste"))
+        mockMvc.perform(get("http://localhost:8082/personne-liste"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("personne/personne_liste"))
