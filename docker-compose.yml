@@ -19,7 +19,7 @@ services:
     container_name: apiprojet
     restart: on-failure
     ports:
-      - "9010:9000"
+      - "9000:9000"
     depends_on:
       - mysql_server
     networks:
