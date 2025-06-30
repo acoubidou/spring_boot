@@ -1,6 +1,7 @@
 # 🚗 Auto Pro - Gestion des Personnes et Véhicules
 
-Projet Java Spring Boot permettant de gérer des **personnes** et leurs **véhicules** via une API externe.  
+Projet Java Spring Boot permettant de gérer des **personnes** et leurs **véhicules** via une API externe :
+[AutoPro API](https://github.com/acoubidou/spring_boot_api)
 Il propose une interface web pour consulter les données et effectuer diverses opérations.
 
 ## 🛠️ Technologies utilisées
